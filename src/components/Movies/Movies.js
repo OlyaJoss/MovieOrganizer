@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MovieItem from '../MovieItem/MovieItem';
 import './Movies.css';
+import { fetchMovies } from '../../redux/actions';
+import { connect } from 'react-redux';
 
 class Movies extends Component {
     state = { 
@@ -21,17 +23,26 @@ class Movies extends Component {
             }
         ]
     }
+    componentDidMount() {
+        this.props.dispatch(fetchMovies())
+         console.log(this.props.allMovies.Search)
+    }
+    
+
     render() { 
         return ( 
             <ul className="movies">
-                {this.state.movies.map((movie) => (
+                {/* this.state.movies.map отрисовывает фильмы*/}
+                {this.props.allMovies.Search.map((movie) => {
+                    return (
                     <li className="movies__item" key={movie.imdbID}>
                         <MovieItem {...movie} />
                     </li>
-                ))}
+                )}
+                )}
             </ul>
         );
     }
 }
- 
-export default Movies;
+
+export default connect(state=> ({ allMovies: state.allMovies}), null)(Movies);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ListPage.css';
 
+
 class ListPage extends Component {
     state = {
         movies: [
@@ -8,6 +9,7 @@ class ListPage extends Component {
         ]
     }
     componentDidMount() {
+        // this.props.dispatch(fetchMovies())
         const id = this.props.match.params;
         console.log(id);
         // TODO: запрос к сервер на получение списка
@@ -18,7 +20,7 @@ class ListPage extends Component {
             <div className="list-page">
                 <h1 className="list-page__title">Мой список</h1>
                 <ul>
-                    {this.state.movies.map((item) => {
+                    {this.props.allMovies.map((item) => {
                         return (
                             <li key={item.imdbID}>
                                 <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.title} ({item.year})</a>
