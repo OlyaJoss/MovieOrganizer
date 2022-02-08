@@ -1,36 +1,37 @@
 import React, { Component } from 'react';
 import './SearchBox.css';
+import { connect } from 'react-redux';
+import { onSearchUpdate } from '../../redux/actions';
 
 class SearchBox extends Component {
-    state = {
-        searchLine: ''
-    }
-    searchLineChangeHandler = (e) => {
-        this.setState({ searchLine: e.target.value });
-    }
+    // state = {
+    //     searchLine: ''
+    // }
+    // searchLineChangeHandler = (e) => {
+    //     this.setState({ searchLine: e.target.value });
+    // }
     searchBoxSubmitHandler = (e) => {
         e.preventDefault();
     }
     render() {
-        const { searchLine } = this.state;
-
+        const { inputValue } = this.props;
         return (
             <div className="search-box">
                 <form className="search-box__form" onSubmit={this.searchBoxSubmitHandler}>
                     <label className="search-box__form-label">
                         Искать фильм по названию:
                         <input
-                            value={searchLine}
+                            value={inputValue}
                             type="text"
                             className="search-box__form-input"
                             placeholder="Например, Shawshank Redemption"
-                            onChange={this.searchLineChangeHandler}
+                            onChange={(e)=> this.props.onSearchUpdate(e.target.value)}
                         />
                     </label>
                     <button
                         type="submit"
                         className="search-box__form-submit"
-                        disabled={!searchLine}
+                        disabled={!inputValue}
                     >
                         Искать
                     </button>
@@ -39,5 +40,8 @@ class SearchBox extends Component {
         );
     }
 }
- 
-export default SearchBox;
+const mapDispatchToProps = dispatch => ({
+    onSearchUpdate: (query) => dispatch(onSearchUpdate(query))
+})
+
+export default connect(state=> ({ inputValue: state.inputValue}), mapDispatchToProps)(SearchBox);
