@@ -26,8 +26,8 @@ export function fetchRes(resData) {
     }
 }
 
-export function fetchMovies() {
-    return function (dispatch, query) {
+export function fetchMovies(query= 'movie') {
+    return function (dispatch) {
         fetch(`https://www.omdbapi.com/?s=${query}&apikey=f860633b`)
             .then(res => res.json())
             .then(data => {
