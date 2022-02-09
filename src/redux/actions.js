@@ -26,7 +26,6 @@ export function fetchRes(resData) {
     }
 }
 
-
 export function fetchMovies() {
     return function (dispatch, query) {
         fetch(`https://www.omdbapi.com/?s=${query}&apikey=f860633b`)
@@ -35,7 +34,6 @@ export function fetchMovies() {
                 console.log(data)
                 return dispatch(fetchRes(data))
             })
-
     }
 }
 
