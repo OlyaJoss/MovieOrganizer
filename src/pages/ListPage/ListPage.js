@@ -11,7 +11,6 @@ class ListPage extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchMovies('godfather'))
     const id = this.props.match.params;
     console.log(id);
     // TODO: запрос к сервер на получение списка

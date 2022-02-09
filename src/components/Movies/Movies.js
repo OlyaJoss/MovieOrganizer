@@ -24,11 +24,8 @@ class Movies extends Component {
         ]
     }
     componentDidMount() {
-        this.props.dispatch(fetchMovies())
-        
-         console.log(this.props.allMovies.Search)
+
     }
-    
 
     render() { 
         return ( 
