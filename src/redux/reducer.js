@@ -18,6 +18,11 @@ switch (action.type) {
             ...state,
             inputValue: action.payload.data
         }
+    case 'ADD_TO_FAV':
+        return {
+            ...state,
+            favMovies: action.payload.data
+        }
         default:
             return state;
 }

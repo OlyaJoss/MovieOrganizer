@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => ({
     addToFav: (id) => dispatch(addToFav(id))
 })
 
-export default connect(null, mapDispatchToProps)(MovieItem);
+export default connect(state=> ({ favMovies: state.favMovies}), mapDispatchToProps)(MovieItem);

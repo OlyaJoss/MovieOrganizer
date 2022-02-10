@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import './ListPage.css';
-import {fetchMovies} from "../../redux/actions";
-
 
 class ListPage extends Component {
-  state = {
-    movies: [
-      {title: 'The Godfather', year: 1972, imdbID: 'tt0068646'}
-    ]
-  }
+  // state = {
+  //   movies: [
+  //     {title: 'The Godfather', year: 1972, imdbID: 'tt0068646'}
+  //   ]
+  // }
 
   componentDidMount() {
     const id = this.props.match.params;
@@ -22,10 +20,10 @@ class ListPage extends Component {
       <div className="list-page">
         <h1 className="list-page__title">Мой список</h1>
         <ul>
-          {this.props.allMovies.map((item) => {
+          {this.props.favMovies.map((item) => {
             return (
               <li key={item.imdbID}>
-                <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.title} ({item.year})</a>
+                <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.Title} ({item.Year})</a>
               </li>
             );
           })}
@@ -35,4 +33,4 @@ class ListPage extends Component {
   }
 }
 
-export default ListPage;
+export default ListPage
