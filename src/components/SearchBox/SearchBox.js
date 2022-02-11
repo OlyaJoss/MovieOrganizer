@@ -40,9 +40,11 @@ class SearchBox extends Component {
   }
 }
 
+const mapStateToProps = state => ({inputValue: state.inputValue})
+
 const mapDispatchToProps = dispatch => ({
   onSearchUpdate: (query) => dispatch(onSearchUpdate(query)),
   fetchMovies: (query) => dispatch(fetchMovies(query))
 })
 
-export default connect(state => ({inputValue: state.inputValue}), mapDispatchToProps)(SearchBox);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
