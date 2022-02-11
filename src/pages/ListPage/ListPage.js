@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 import './ListPage.css';
 
 class ListPage extends Component {
-  // state = {
-  //   movies: [
-  //     {title: 'The Godfather', year: 1972, imdbID: 'tt0068646'}
-  //   ]
-  // }
 
   componentDidMount() {
     const id = this.props.match.params;
@@ -23,7 +18,7 @@ class ListPage extends Component {
           {this.props.favMovies.map((item) => {
             return (
               <li key={item.imdbID}>
-                <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.Title} ({item.Year})</a>
+                <a href="https://www.imdb.com/title/tt0068646/" target="_blank" rel="noopener noreferrer">{item.Title} ({item.Year})</a>
               </li>
             );
           })}
