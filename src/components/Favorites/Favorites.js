@@ -26,4 +26,4 @@ class Favorites extends Component {
     }
 }
 // connect(state=> ({ favMovies: state.favMovies}), null)
-export default Favorites
+export default Favorites;
