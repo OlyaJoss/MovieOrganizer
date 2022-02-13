@@ -40,6 +40,7 @@ const initialState = {
     //   object
   ],
   inputValue: '',
+  disabled: false
 }
 
 function reducer(state = initialState, action) {
@@ -57,8 +58,10 @@ function reducer(state = initialState, action) {
     case 'ADD_TO_FAV':
 
       if (state.favMovies.find((item) => item.imdbID === action.payload.data)) {
+        console.log('1 ветка')
         return {
           ...state,
+           disabled: action.payload.disabled
         }
       }
 

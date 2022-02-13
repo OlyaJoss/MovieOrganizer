@@ -19,7 +19,9 @@ class MovieItem extends Component {
           </h3>
           <button onClick={() => this.props.addToFav(imdbID)}
                   type="button"
+                  disabled={this.props.disabled}
                   className="movie-item__add-button">
+                    
             Добавить в
             список
           </button>
@@ -33,4 +35,11 @@ const mapDispatchToProps = dispatch => ({
   addToFav: (id) => dispatch(addToFav(id))
 })
 
-export default connect(state => ({favMovies: state.favMovies}), mapDispatchToProps)(MovieItem);
+const mapStateToProps = (state) => {
+  return {
+    favMovies: state.favMovies,
+    disabled: state.disabled
+}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MovieItem);
+// export default connect(state => ({favMovies: state.favMovies}), mapDispatchToProps)(MovieItem);

@@ -4,14 +4,8 @@ import {connect} from 'react-redux';
 
 
 class Favorites extends Component {
-  // state = {
-  //     title: 'Новый список',
-  //     movies: [
-  //         { imdbID: 'tt0068646', title: 'The Godfather', year: 1972 }
-  //     ]
-  // }
-  render() {
 
+  render() {
     return (
       <div className="favorites">
         <input defaultValue={'Новый список'} className="favorites__name"/>
