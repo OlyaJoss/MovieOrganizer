@@ -35,12 +35,9 @@ const initialState = {
       Type: "movie",
       Poster: "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
     },
-
-
-    //   object
   ],
   inputValue: '',
-  disabled: false
+  
 }
 
 function reducer(state = initialState, action) {
@@ -60,18 +57,22 @@ function reducer(state = initialState, action) {
       if (state.favMovies.find((item) => item.imdbID === action.payload.data)) {
         console.log('1 ветка')
         return {
-          ...state,
-           disabled: action.payload.disabled
+          ...state
         }
       }
-
       const newItem = state.allMovies.Search.find((item) => item.imdbID === action.payload.data);
-
       return {
         ...state,
         favMovies: [...state.favMovies, {...newItem}]
       }
 
+      case 'DEL_FAV':
+        console.log(action.payload.data)
+        const newFav = state.favMovies.filter((item) => item.imdbID !== action.payload.data)
+        return {
+          ...state,
+          favMovies: newFav
+        }
     default:
       return state;
   }

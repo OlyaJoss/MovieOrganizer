@@ -2,8 +2,16 @@ export function addToFav(favMovie) {
   return {
     type: 'ADD_TO_FAV',
     payload: {
-      data: favMovie,
-      disabled: true
+      data: favMovie
+    }
+  }
+}
+
+export function delFav(id) {
+  return {
+    type: 'DEL_FAV',
+    payload: {
+      data: id
     }
   }
 }

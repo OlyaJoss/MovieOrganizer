@@ -26,6 +26,15 @@
     transition: all 0.2s linear;
 }
 
+.favorites__delete {
+    border: none;
+    background-color: rgb(178, 73, 219);
+    padding: 3px 5px;
+    color: #FFEEDB;
+    font-size: 14px;
+    transition: all 0.2s linear;
+}
+
 .favorites__save:hover {
     cursor: pointer;
     opacity: 0.9;

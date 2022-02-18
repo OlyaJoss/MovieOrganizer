@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './MovieItem.css';
 import {connect} from 'react-redux';
-import {addToFav} from '../../redux/actions';
+import {addToFav } from '../../redux/actions';
 
 class MovieItem extends Component {
 
@@ -19,7 +19,7 @@ class MovieItem extends Component {
           </h3>
           <button onClick={() => this.props.addToFav(imdbID)}
                   type="button"
-                  disabled={this.props.disabled}
+                  disabled={this.props.favMovies.some((el)=>el.imdbID === imdbID)}
                   className="movie-item__add-button">
                     
             Добавить в
@@ -35,11 +35,4 @@ const mapDispatchToProps = dispatch => ({
   addToFav: (id) => dispatch(addToFav(id))
 })
 
-const mapStateToProps = (state) => {
-  return {
-    favMovies: state.favMovies,
-    disabled: state.disabled
-}
-}
-export default connect(mapStateToProps, mapDispatchToProps)(MovieItem);
-// export default connect(state => ({favMovies: state.favMovies}), mapDispatchToProps)(MovieItem);
+export default connect(state => ({favMovies: state.favMovies}), mapDispatchToProps)(MovieItem);

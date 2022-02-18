@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Favorites.css';
 import {connect} from 'react-redux';
+import { delFav } from '../../redux/actions'
 
 
 class Favorites extends Component {
@@ -11,7 +12,11 @@ class Favorites extends Component {
         <input defaultValue={'Новый список'} className="favorites__name"/>
         <ul className="favorites__list">
           {this.props.favMovies.map((item) => {
-            return <li key={item.imdbID}>{item.Title} ({item.Year})</li>;
+            return <li key={item.imdbID}>{item.Title} ({item.Year}) 
+            <button onClick={()=> this.props.delFav(item.imdbID)} 
+            className="favorites__delete" 
+            type="button">X
+            </button></li>;
           })}
         </ul>
         <button type="button" className="favorites__save">Сохранить список</button>
@@ -19,5 +24,8 @@ class Favorites extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => ({
+  delFav: (id) => dispatch(delFav(id))
+})
 
-export default connect(state => ({favMovies: state.favMovies}), null)(Favorites)
+export default connect(state => ({favMovies: state.favMovies}), mapDispatchToProps)(Favorites)
