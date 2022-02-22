@@ -29,7 +29,7 @@ class ListPage extends Component {
   }
 
   getMovies = (id) => {
-    fetch(`https://www.omdbapi.com/?i=${id}&apikey=f860633b`)
+    return fetch(`https://www.omdbapi.com/?i=${id}&apikey=f860633b`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
@@ -41,8 +41,6 @@ class ListPage extends Component {
     const id = this.props.match.params.id;
     console.log(id);
     this.fetchList(id)
-    // TODO: запрос к сервер на получение списка
-    // TODO: запросы к серверу по всем imdbID
   }
 
   render() {
@@ -54,14 +52,14 @@ class ListPage extends Component {
       <div className="list-page">
         <h1 className="list-page__title">{this.state.favListTitle}</h1>
         <ul>
-          {/* {this.state.favListMovies.map((item) => {
+          {this.state.favListMovies.map((item) => {
             return (
               <li key={item.imdbID}>
                 <a href={`https://www.imdb.com/title/${item.imdbID}/`} target="_blank" 
                 rel="noopener noreferrer">{item.Title} ({item.Year})</a>
               </li>
             );
-          })} */}
+          })}
         </ul>
       </div>
     );

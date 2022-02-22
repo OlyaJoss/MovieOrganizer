@@ -5,7 +5,28 @@ import { delFav } from '../../redux/actions'
 
 
 class Favorites extends Component {
-
+ 
+saveList = () => {
+  fetch('https://acb-api.algoritmika.org/api/movies/list', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      "title": "Matrix",
+      "movies": [
+          "tt0068646",
+          "tt0098019"
+      ]})
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.log('Произошла ошибка')
+  })
+}
   render() {
     return (
       <div className="favorites">
@@ -19,7 +40,7 @@ class Favorites extends Component {
             </button></li>;
           })}
         </ul>
-        <button type="button" className="favorites__save">Сохранить список</button>
+        <button onClick={() => this.saveList()} type="button" className="favorites__save">Сохранить список</button>
       </div>
     );
   }
