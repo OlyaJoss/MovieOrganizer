@@ -29,7 +29,7 @@ class ListPage extends Component {
   }
 
   getMovies = (id) => {
-    fetch(`https://www.omdbapi.com/?i=${id}&apikey=f860633b`)
+    return fetch(`https://www.omdbapi.com/?i=${id}&apikey=f860633b`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
