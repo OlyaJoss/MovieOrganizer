@@ -7,6 +7,12 @@ export function addToFav(favMovie) {
   }
 }
 
+export function clearFav() {
+  return {
+    type: 'CLEAR_FAV'
+  }
+}
+
 export function delFav(id) {
   return {
     type: 'DEL_FAV',
