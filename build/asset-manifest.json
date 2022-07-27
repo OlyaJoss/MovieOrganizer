@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Redux-m4/static/css/main.9a73ad93.chunk.css",
+    "main.js": "/Redux-m4/static/js/main.af213a3a.chunk.js",
+    "main.js.map": "/Redux-m4/static/js/main.af213a3a.chunk.js.map",
+    "runtime-main.js": "/Redux-m4/static/js/runtime-main.a4a2b4ed.js",
+    "runtime-main.js.map": "/Redux-m4/static/js/runtime-main.a4a2b4ed.js.map",
+    "static/js/2.a48e43d4.chunk.js": "/Redux-m4/static/js/2.a48e43d4.chunk.js",
+    "static/js/2.a48e43d4.chunk.js.map": "/Redux-m4/static/js/2.a48e43d4.chunk.js.map",
+    "index.html": "/Redux-m4/index.html",
+    "precache-manifest.41a5cb992f2c5ed10f4469c55583d9da.js": "/Redux-m4/precache-manifest.41a5cb992f2c5ed10f4469c55583d9da.js",
+    "service-worker.js": "/Redux-m4/service-worker.js",
+    "static/css/main.9a73ad93.chunk.css.map": "/Redux-m4/static/css/main.9a73ad93.chunk.css.map",
+    "static/js/2.a48e43d4.chunk.js.LICENSE.txt": "/Redux-m4/static/js/2.a48e43d4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4a2b4ed.js",
+    "static/js/2.a48e43d4.chunk.js",
+    "static/css/main.9a73ad93.chunk.css",
+    "static/js/main.af213a3a.chunk.js"
+  ]
+}

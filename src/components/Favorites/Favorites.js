@@ -55,7 +55,7 @@ class Favorites extends Component {
             return <li key={item.imdbID}>{item.Title} ({item.Year})
               <button onClick={() => this.props.delFav(item.imdbID)}
                 className="favorites__delete"
-                type="button">
+                type="button">X
               </button></li>;
           })}
         </ul>
