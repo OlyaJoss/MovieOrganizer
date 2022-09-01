@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/MovieOrganizer/static/css/main.9a73ad93.chunk.css",
-    "main.js": "/MovieOrganizer/static/js/main.51aa9878.chunk.js",
-    "main.js.map": "/MovieOrganizer/static/js/main.51aa9878.chunk.js.map",
+    "main.js": "/MovieOrganizer/static/js/main.2dbc33a0.chunk.js",
+    "main.js.map": "/MovieOrganizer/static/js/main.2dbc33a0.chunk.js.map",
     "runtime-main.js": "/MovieOrganizer/static/js/runtime-main.ca8a12cc.js",
     "runtime-main.js.map": "/MovieOrganizer/static/js/runtime-main.ca8a12cc.js.map",
     "static/js/2.ed76725c.chunk.js": "/MovieOrganizer/static/js/2.ed76725c.chunk.js",
     "static/js/2.ed76725c.chunk.js.map": "/MovieOrganizer/static/js/2.ed76725c.chunk.js.map",
     "index.html": "/MovieOrganizer/index.html",
-    "precache-manifest.a825f1fbb44d90caabb57c05c08e7af3.js": "/MovieOrganizer/precache-manifest.a825f1fbb44d90caabb57c05c08e7af3.js",
+    "precache-manifest.9e39185ea39bf21be2cae522676d4622.js": "/MovieOrganizer/precache-manifest.9e39185ea39bf21be2cae522676d4622.js",
     "service-worker.js": "/MovieOrganizer/service-worker.js",
     "static/css/main.9a73ad93.chunk.css.map": "/MovieOrganizer/static/css/main.9a73ad93.chunk.css.map",
     "static/js/2.ed76725c.chunk.js.LICENSE.txt": "/MovieOrganizer/static/js/2.ed76725c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ca8a12cc.js",
     "static/js/2.ed76725c.chunk.js",
     "static/css/main.9a73ad93.chunk.css",
-    "static/js/main.51aa9878.chunk.js"
+    "static/js/main.2dbc33a0.chunk.js"
   ]
 }
